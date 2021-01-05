@@ -1,0 +1,27 @@
+<form [formGroup]="searchForm" autocomplete="off">
+   <div class="container">
+      <div class="ng-autocomplete">
+         <ng-autocomplete 
+            formControlName="q"
+            debounceTime="1000"
+            [data]="suggestions" 
+            [initialValue]="" 
+            [placeHolder]="placeholder" 
+            [searchKeyword]="keyword" 
+            [itemTemplate]="itemTemplateStatic"
+            (selected)="onSelected($event)"
+            (inputChanged)="onChangeSearch($event)"
+            (inputCleared)="resetSuggestion()"
+            (keyup)="onKeyUp($event)">
+         </ng-autocomplete>
+
+         <ng-template #itemTemplateStatic let-item>
+            <a [innerHTML]="item" style="text-align: left;"></a>
+         </ng-template>
+      </div>
+      <select class="custom-select" formControlName="pgrank" (change)='onSubmit()'>
+         <option value="default">Default ranking</option>
+         <option *ngFor="let rank of rankings" [ngValue]="rank.id">{{rank.name}}</option>
+      </select>
+   </div>
+</form>

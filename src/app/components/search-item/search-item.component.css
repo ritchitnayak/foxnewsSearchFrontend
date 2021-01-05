@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+
+.title {
+    font-size: large;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.title a:link { color: rgb(19, 27, 164); }
+.title a:visited { color: rgb(92, 25, 147); }
+.title a:hover { 
+    color: rgb(19, 27, 164);
+    text-decoration: underline;
+}
+.title a:active { color: rgb(19, 27, 164); }
+
+.url {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.url a:link { color: rgb(46,107,44); }
+.url a:visited { color: rgb(46,107,44); }
+.url a:hover { 
+    color: rgb(46,107,44);
+    text-decoration: underline;
+}
+.url a:active { color: rgb(46,107,44); }
+
+.desc {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 3px 6px 0 rgba(41, 40, 40, 0.2);
+    padding: 15px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.sansserif {
+    margin-top: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-small;
+    color: #a09e9e;
+}
+
+.nounderline {
+    text-decoration: none;
+}

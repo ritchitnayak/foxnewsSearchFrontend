@@ -1,0 +1,12 @@
+<app-search-form (searchQuery)="searchQuery($event)" class="center"></app-search-form><br>
+
+<div *ngIf="items && items.length !== 0">
+    <div *ngIf="isCorrected === true" class="corrected">Showing resuts for <span class="corrected_query">{{ corr_query }}</span></div>
+    <div *ngIf="isCorrected === true">Search instead for <span (click)="origQuery()" class="original_query">{{ orig_query }}</span></div>
+    <div class="result-header">Showing <strong>{{ (p-1)*10+1 }} - {{ math.min(p*10, res_count) }}</strong> of <strong>{{ res_count }} </strong> Results</div>
+    <hr>
+</div>
+
+<app-search-item  *ngFor="let item of items | paginate: { itemsPerPage: 10, currentPage: p, totalItems: res_count }" [item]="item"></app-search-item>
+
+<pagination-controls maxSize="8" previousLabel="" nextLabel="" autoHide="true" (pageChange)="getPage($event)" class="my-pagination right"></pagination-controls>
